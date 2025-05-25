@@ -8,7 +8,10 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  
+  // Pages that have hero sections and should start with transparent navbar
+  const heroPages = ['/', '/about', '/moments', '/films'];
+  const isHeroPage = heroPages.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +30,8 @@ const Navigation = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  // For non-home pages, always show white background
-  const shouldShowWhiteBg = !isHomePage || isScrolled;
+  // Show white background if not on hero page OR if scrolled on hero page
+  const shouldShowWhiteBg = !isHeroPage || isScrolled;
 
   return (
     <motion.nav

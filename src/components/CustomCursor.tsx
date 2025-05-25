@@ -33,7 +33,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor */}
       <motion.div
-        className="fixed pointer-events-none z-[9999] w-6 h-6 border-2 border-white rounded-full"
+        className="fixed pointer-events-none z-[9999] w-6 h-6 border-2 border-black rounded-full"
         animate={{
           x: mousePosition.x - 12,
           y: mousePosition.y - 12,
@@ -46,13 +46,13 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
         style={{
-          backgroundColor: isHovering ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
-          boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+          backgroundColor: isHovering ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
+          boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
         }}
       />
       {/* Cursor trail */}
       <motion.div
-        className="fixed pointer-events-none z-[9998] w-2 h-2 bg-white rounded-full opacity-80"
+        className="fixed pointer-events-none z-[9998] w-2 h-2 bg-black rounded-full opacity-80"
         animate={{
           x: mousePosition.x - 4,
           y: mousePosition.y - 4,

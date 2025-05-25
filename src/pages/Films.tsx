@@ -25,30 +25,46 @@ const Films = () => {
   return (
     <Layout>
       <div className="pt-20 min-h-screen">
-        {/* Hero Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-cormorant font-light mb-6"
-            >
-              Wedding Films
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-gray-600 font-inter mb-12 max-w-2xl mx-auto"
-            >
-              Cinematic storytelling that brings your love story to life through motion and emotion
-            </motion.p>
+        {/* Hero Section with Background Video */}
+        <section className="relative h-screen overflow-hidden">
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+              title="Background Video"
+              className="w-full h-full object-cover"
+              style={{ transform: 'scale(1.2)' }}
+              allow="autoplay; encrypted-media"
+              frameBorder="0"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 flex items-center justify-center h-full">
+            <div className="container mx-auto px-4 text-center">
+              <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-6xl font-cormorant font-light mb-6 text-white"
+              >
+                Wedding Films
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg text-white/90 font-inter mb-12 max-w-2xl mx-auto"
+              >
+                Cinematic storytelling that brings your love story to life through motion and emotion
+              </motion.p>
+            </div>
           </div>
         </section>
 
         {/* Video Gallery */}
-        <section className="pb-20">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {videos.map((video, index) => (

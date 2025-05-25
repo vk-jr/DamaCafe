@@ -116,8 +116,8 @@ const WeddingHero = () => {
               transition={{ delay: 0.7, duration: 1 }}
               className="text-4xl md:text-7xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-6"
             >
-              <span className="block mb-2">CAPTURING</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+              <span className="block mb-4">CAPTURING</span>
+              <div className="relative h-20 md:h-24 lg:h-28 flex w-full justify-center overflow-hidden text-center">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
@@ -133,8 +133,8 @@ const WeddingHero = () => {
                     {title}
                   </motion.span>
                 ))}
-              </span>
-              <span className="block mt-2">MOMENTS</span>
+              </div>
+              <span className="block mt-4">MOMENTS</span>
             </motion.h1>
 
             {/* Subtitle */}

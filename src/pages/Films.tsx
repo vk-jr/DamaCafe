@@ -24,8 +24,8 @@ const Films = () => {
 
   return (
     <Layout>
-      <div className="pt-20 min-h-screen">
-        {/* Hero Section with Background Video */}
+      <div className="min-h-screen">
+        {/* Hero Section - Full screen from top with Background Video */}
         <section className="relative h-screen overflow-hidden">
           {/* Background Video */}
           <div className="absolute inset-0 w-full h-full">

@@ -21,8 +21,8 @@ const Moments = () => {
 
   return (
     <Layout>
-      <div className="pt-20 min-h-screen">
-        {/* Hero Section with Full Screen Image */}
+      <div className="min-h-screen">
+        {/* Hero Section - Full screen from top */}
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <img

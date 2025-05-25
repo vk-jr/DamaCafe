@@ -47,25 +47,24 @@ const WeddingHero = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Image Carousel Background */}
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
+      {/* Image Carousel Background - Fixed to prevent white flash */}
+      <div className="absolute inset-0 bg-black">
+        {heroImages.map((image, index) => (
           <motion.div
-            key={currentImage}
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            key={index}
             className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: currentImage === index ? 1 : 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             <img
-              src={heroImages[currentImage]}
+              src={image}
               alt="Wedding Photography"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />
           </motion.div>
-        </AnimatePresence>
+        ))}
       </div>
 
       {/* Navigation Arrows */}
@@ -110,7 +109,7 @@ const WeddingHero = () => {
               </Button>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Main Heading with Animated Text */}
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -118,18 +117,18 @@ const WeddingHero = () => {
               className="text-4xl md:text-7xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-6"
             >
               <span className="block mb-2">CAPTURING</span>
-              <span className="relative flex w-full justify-center overflow-hidden">
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
                     className="absolute font-medium"
                     initial={{ opacity: 0, y: 100 }}
+                    transition={{ type: "spring", stiffness: 80, damping: 20 }}
                     animate={
                       titleNumber === index
                         ? { y: 0, opacity: 1 }
                         : { y: titleNumber > index ? -100 : 100, opacity: 0 }
                     }
-                    transition={{ type: "spring", stiffness: 80, damping: 20 }}
                   >
                     {title}
                   </motion.span>

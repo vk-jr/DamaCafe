@@ -30,23 +30,41 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <motion.div
-      className="fixed pointer-events-none z-50 w-5 h-5 border-2 border-black rounded-full mix-blend-difference"
-      animate={{
-        x: mousePosition.x - 10,
-        y: mousePosition.y - 10,
-        scale: isHovering ? 2 : 1,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 28,
-        mass: 0.5,
-      }}
-      style={{
-        backgroundColor: isHovering ? 'rgba(0, 0, 0, 0.1)' : 'transparent',
-      }}
-    />
+    <>
+      {/* Main cursor */}
+      <motion.div
+        className="fixed pointer-events-none z-[9999] w-6 h-6 border-2 border-white rounded-full"
+        animate={{
+          x: mousePosition.x - 12,
+          y: mousePosition.y - 12,
+          scale: isHovering ? 2 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+          mass: 0.5,
+        }}
+        style={{
+          backgroundColor: isHovering ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
+          boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+        }}
+      />
+      {/* Cursor trail */}
+      <motion.div
+        className="fixed pointer-events-none z-[9998] w-2 h-2 bg-white rounded-full opacity-80"
+        animate={{
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 15,
+          mass: 0.1,
+        }}
+      />
+    </>
   );
 };
 

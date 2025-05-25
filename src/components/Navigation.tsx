@@ -8,6 +8,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +27,15 @@ const Navigation = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
+  // For non-home pages, always show white background
+  const shouldShowWhiteBg = !isHomePage || isScrolled;
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        shouldShowWhiteBg ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -39,7 +43,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="text-2xl font-cormorant font-bold">
             <span className={`transition-colors duration-300 ${
-              isScrolled ? 'text-black' : 'text-white'
+              shouldShowWhiteBg ? 'text-black' : 'text-white'
             }`}>
               MAGMODE
             </span>
@@ -52,19 +56,19 @@ const Navigation = () => {
                 key={item.name}
                 to={item.path}
                 className={`font-inter font-medium transition-colors duration-300 relative group ${
-                  isScrolled ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200'
+                  shouldShowWhiteBg ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200'
                 } ${location.pathname === item.path ? 'opacity-100' : 'opacity-90'}`}
               >
                 {item.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                  isScrolled ? 'bg-black' : 'bg-white'
+                  shouldShowWhiteBg ? 'bg-black' : 'bg-white'
                 } ${location.pathname === item.path ? 'w-full' : ''}`} />
               </Link>
             ))}
             <a
               href="tel:+1234567890"
               className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                isScrolled 
+                shouldShowWhiteBg 
                   ? 'bg-black text-white hover:bg-gray-800' 
                   : 'bg-white text-black hover:bg-gray-100'
               }`}
@@ -78,7 +82,7 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 transition-colors duration-300 ${
-              isScrolled ? 'text-black' : 'text-white'
+              shouldShowWhiteBg ? 'text-black' : 'text-white'
             }`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

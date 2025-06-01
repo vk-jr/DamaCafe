@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
@@ -45,10 +44,10 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-cormorant font-bold">
-            <span className={`transition-colors duration-300 ${
+            <span className={`font-cormorant text-xl font-light tracking-widest ${
               shouldShowWhiteBg ? 'text-black' : 'text-white'
             }`}>
-              MAGMODE
+              VISHNU M C PHOTOGRAPHY
             </span>
           </Link>
 
@@ -59,8 +58,8 @@ const Navigation = () => {
                 key={item.name}
                 to={item.path}
                 className={`font-inter font-medium transition-colors duration-300 relative group ${
-                  shouldShowWhiteBg ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200'
-                } ${location.pathname === item.path ? 'opacity-100' : 'opacity-90'}`}
+                  shouldShowWhiteBg ? 'text-black hover:text-gray-800' : 'text-white hover:text-gray-100'
+                } ${location.pathname === item.path ? 'opacity-100' : 'opacity-95'}`}
               >
                 {item.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${

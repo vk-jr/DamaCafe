@@ -1,29 +1,29 @@
-
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { image20, image21, image22 } from '../assets/imageImports';
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: "Sarah & Michael",
-      wedding: "Napa Valley Wedding",
-      content: "Magmode Photography captured our special day beyond our wildest dreams. Every moment, every emotion, perfectly preserved. We couldn't be happier!",
+      wedding: "Destination Wedding",
+      content: "Working with Vishnu M C Photography was the best decision we made for our wedding. They captured every special moment beautifully.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: image20
     },
     {
       name: "Emma & James",
-      wedding: "Garden Party Wedding",
-      content: "The attention to detail and artistic vision is incredible. Our photos tell the story of our love in the most beautiful way possible.",
+      wedding: "Garden Wedding",
+      content: "The attention to detail and creativity in every shot is amazing. Our photos are everything we dreamed of and more.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: image21
     },
     {
-      name: "Lisa & David",
+      name: "Rachel & David",
       wedding: "Beach Wedding",
-      content: "Professional, creative, and so easy to work with. They made us feel comfortable and captured moments we didn't even know were happening.",
+      content: "The photos capture not just the moments, but the emotions and atmosphere of our special day. Absolutely stunning work!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: image22
     }
   ];
 

@@ -1,20 +1,44 @@
-
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { 
+  image1, image2, image3, image4, image5, image6, image7, image8, image9, image10,
+  image11, image12, image13, image14, image15, image16, image17, image18, image19, image20,
+  image21, image22, image23, image24, image25, image26, image27 
+} from '../assets/imageImports';
 
 const Moments = () => {
   const [activeFilter, setActiveFilter] = useState('ALL');
   
-  const filters = ['ALL', 'WEDDINGS', 'EDITORIAL', 'PORTRAITS', 'TRAVEL'];
-  
+  const filters = ['ALL', 'WEDDINGS', 'PORTRAITS', 'PRE-WEDDING', 'TRADITIONAL', 'FASHION'];
+
   const images = [
-    { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", category: 'WEDDINGS' },
-    { src: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", category: 'PORTRAITS' },
-    { src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", category: 'WEDDINGS' },
-    { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", category: 'EDITORIAL' },
-    { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", category: 'TRAVEL' },
-    { src: "https://images.unsplash.com/photo-1594736797933-d0ddba27b5b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", category: 'PORTRAITS' },
+    // Featured images in specified order
+    { src: image1, category: 'WEDDINGS' },
+    { src: image5, category: 'PRE-WEDDING' },
+    { src: image16, category: 'TRADITIONAL' },
+    { src: image21, category: 'FASHION' },
+    // Remaining images categorized
+    { src: image2, category: 'WEDDINGS' },
+    { src: image3, category: 'WEDDINGS' },
+    { src: image4, category: 'PRE-WEDDING' },
+    { src: image6, category: 'TRADITIONAL' },
+    { src: image7, category: 'PORTRAITS' },
+    { src: image8, category: 'WEDDINGS' },
+    { src: image9, category: 'FASHION' },
+    { src: image10, category: 'TRADITIONAL' },
+    { src: image11, category: 'PRE-WEDDING' },
+    { src: image12, category: 'PORTRAITS' },
+    { src: image17, category: 'WEDDINGS' },
+    { src: image18, category: 'TRADITIONAL' },
+    { src: image19, category: 'FASHION' },
+    { src: image20, category: 'PORTRAITS' },
+    { src: image22, category: 'PRE-WEDDING' },
+    { src: image23, category: 'WEDDINGS' },
+    { src: image24, category: 'TRADITIONAL' },
+    { src: image25, category: 'FASHION' },
+    { src: image26, category: 'PORTRAITS' },
+    { src: image27, category: 'PRE-WEDDING' }
   ];
 
   const filteredImages = activeFilter === 'ALL' ? images : images.filter(img => img.category === activeFilter);
@@ -22,13 +46,13 @@ const Moments = () => {
   return (
     <Layout>
       <div className="min-h-screen">
-        {/* Hero Section - Full screen from top */}
+        {/* Hero Section */}
         <section className="relative h-screen overflow-hidden">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0">            
             <img
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              src={image14}
               alt="Featured Photography"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>
@@ -41,15 +65,15 @@ const Moments = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-6xl font-cormorant font-light mb-6 text-white"
               >
-                Captured Moments
+                Captured Stories
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-white/90 font-inter mb-12 max-w-2xl mx-auto"
+                className="text-lg text-white/95 font-inter mb-12 max-w-2xl mx-auto"
               >
-                A collection of our finest work, showcasing the beauty in every moment
+                A curated collection of timeless moments and cherished memories
               </motion.p>
 
               {/* Filter Buttons */}
@@ -61,7 +85,7 @@ const Moments = () => {
                     className={`px-6 py-2 font-inter font-medium transition-all duration-300 ${
                       activeFilter === filter
                         ? 'bg-white text-black'
-                        : 'border border-white/50 text-white hover:border-white hover:bg-white/10'
+                        : 'border border-white text-white hover:bg-white/20'
                     }`}
                   >
                     {filter}
@@ -89,9 +113,12 @@ const Moments = () => {
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={image.src}
-                      alt="Gallery Image"
+                      alt={`Gallery Image - ${image.category}`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-sm font-inter text-gray-700">{image.category}</p>
                   </div>
                 </motion.div>
               ))}

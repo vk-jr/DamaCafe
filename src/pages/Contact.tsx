@@ -1,30 +1,8 @@
-
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <Layout>
       <div className="pt-20 min-h-screen">
@@ -50,134 +28,71 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Form & Info */}
-        <section className="pb-20">
+        {/* Contact Information */}
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Email */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-col items-center p-8 bg-white rounded-lg shadow-sm"
               >
-                <h2 className="text-3xl font-cormorant font-light mb-8">Send us a message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-inter"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-inter"
-                    />
-                  </div>
-                  <div>
-                    <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-inter"
-                    >
-                      <option value="">Select Service</option>
-                      <option value="wedding">Wedding Photography</option>
-                      <option value="engagement">Engagement Session</option>
-                      <option value="portrait">Portrait Session</option>
-                      <option value="event">Event Photography</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <textarea
-                      name="message"
-                      placeholder="Tell us about your special day..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-inter resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-inter font-medium"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                <Mail className="w-8 h-8 text-gray-800 mb-4" />
+                <h3 className="text-xl font-cormorant mb-2">Email Us</h3>
+                <p className="text-gray-600 font-inter text-center">
+                  <a href="mailto:hello@vishnumcphotography.com" className="hover:text-gray-800 transition-colors">
+                    hello@vishnumcphotography.com
+                  </a>
+                </p>
               </motion.div>
 
-              {/* Contact Info */}
+              {/* Phone */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-col items-center p-8 bg-white rounded-lg shadow-sm"
               >
-                <div>
-                  <h2 className="text-3xl font-cormorant font-light mb-8">Get in touch</h2>
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <Phone className="text-black" size={24} />
-                      <div>
-                        <p className="font-inter font-medium">Phone</p>
-                        <p className="text-gray-600">+1 (555) 123-4567</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <Mail className="text-black" size={24} />
-                      <div>
-                        <p className="font-inter font-medium">Email</p>
-                        <p className="text-gray-600">hello@magmodephoto.com</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <MapPin className="text-black" size={24} />
-                      <div>
-                        <p className="font-inter font-medium">Location</p>
-                        <p className="text-gray-600">New York, NY</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Phone className="w-8 h-8 text-gray-800 mb-4" />
+                <h3 className="text-xl font-cormorant mb-2">Call Us</h3>
+                <p className="text-gray-600 font-inter text-center">
+                  <a href="tel:+919846842162" className="hover:text-gray-800 transition-colors">
+                    +91 9846842162
+                  </a>
+                </p>
+              </motion.div>
 
-                <div>
-                  <h3 className="text-xl font-cormorant font-medium mb-4">Business Hours</h3>
-                  <div className="space-y-2 text-gray-600 font-inter">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: By Appointment</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-cormorant font-medium mb-4">Follow Us</h3>
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-gray-600 hover:text-black transition-colors duration-300">
-                      <Instagram size={24} />
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-black transition-colors duration-300">
-                      <Facebook size={24} />
-                    </a>
-                  </div>
-                </div>
+              {/* Location */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col items-center p-8 bg-white rounded-lg shadow-sm"
+              >
+                <MapPin className="w-8 h-8 text-gray-800 mb-4" />
+                <h3 className="text-xl font-cormorant mb-2">Visit Us</h3>
+                <p className="text-gray-600 font-inter text-center">
+                  Kerala, India
+                </p>
               </motion.div>
             </div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex justify-center gap-6 mt-16"
+            >
+              <a href="https://www.instagram.com/vishnu_m.c/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow">
+                <Instagram className="w-6 h-6 text-gray-800" />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow">
+                <Facebook className="w-6 h-6 text-gray-800" />
+              </a>
+            </motion.div>
           </div>
         </section>
       </div>

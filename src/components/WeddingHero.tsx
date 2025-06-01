@@ -1,24 +1,24 @@
-
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoveRight, PhoneCall, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
+import { image1, image5, image16, image23 } from '../assets/imageImports';
 
 const WeddingHero = () => {
+  const navigate = useNavigate();
   const [titleNumber, setTitleNumber] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
   
   const titles = useMemo(
     () => ["TIMELESS", "ELEGANT", "AUTHENTIC", "ROMANTIC", "ETERNAL"],
     []
-  );
-
-  // Sample wedding images - replace with actual images
+  );  
   const heroImages = [
-    "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    image1,  // Wedding
+    image5,  // Pre-wedding
+    image16, // Traditional
+    image23  // Changed from image21 to image23
   ];
 
   useEffect(() => {
@@ -60,9 +60,9 @@ const WeddingHero = () => {
             <img
               src={image}
               alt="Wedding Photography"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center scale-110"
             />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/50" />  {/* Increased overlay opacity for better contrast */}
           </motion.div>
         ))}
       </div>
@@ -70,13 +70,13 @@ const WeddingHero = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevImage}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-30 text-white/80 hover:text-white transition-all duration-300 hover:scale-110"
+        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-white transition-all duration-300 hover:scale-110"
       >
         <ChevronLeft size={40} />
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-30 text-white/80 hover:text-white transition-all duration-300 hover:scale-110"
+        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-white transition-all duration-300 hover:scale-110"
       >
         <ChevronRight size={40} />
       </button>
@@ -88,7 +88,7 @@ const WeddingHero = () => {
             key={index}
             onClick={() => setCurrentImage(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImage ? 'bg-white' : 'bg-white/50'
+              index === currentImage ? 'bg-white' : 'bg-white/70'  /* Increased inactive dot opacity */
             }`}
           />
         ))}
@@ -103,9 +103,8 @@ const WeddingHero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              <Button variant="secondary" size="sm" className="gap-4 mb-8 bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
-                Award-Winning Photography <MoveRight className="w-4 h-4" />
+            >              <Button variant="secondary" size="sm" className="gap-4 mb-8 bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
+                Award-Winning Photography ✨
               </Button>
             </motion.div>
 
@@ -152,15 +151,19 @@ const WeddingHero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
+              transition={{ delay: 1.2, duration: 0.8 }}              className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" className="gap-4 bg-white text-black hover:bg-gray-100 font-inter" variant="outline">
-                View Our Work <MoveRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" className="gap-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-inter">
-                Book a Consultation <PhoneCall className="w-4 h-4" />
-              </Button>
+              {/* Navigation Links */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                <Button 
+                  variant="outline" 
+                  className="bg-white text-black hover:bg-black hover:text-white border-2 border-white group px-6 py-3 h-auto"
+                  onClick={() => navigate('/contact')}
+                >
+                  Book Your Session
+                  <MoveRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
             </motion.div>
           </div>
         </div>

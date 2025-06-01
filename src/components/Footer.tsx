@@ -1,5 +1,4 @@
-
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -9,33 +8,40 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-cormorant font-bold">MAGMODE</h3>
-            <p className="text-gray-300 font-inter leading-relaxed">
+            <h3 className="text-2xl font-cormorant font-bold">VISHNU M C PHOTOGRAPHY</h3>
+            <p className="text-gray-200 font-inter leading-relaxed">
               Capturing life's most precious moments with artistry and passion. 
               Creating timeless memories that last forever.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a 
+                href="https://www.instagram.com/vishnu_m.c/?utm_source=ig_web_button_share_sheet" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-200 hover:text-white transition-colors duration-300"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a 
+                href="https://facebook.com/vishnumcphotography" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-200 hover:text-white transition-colors duration-300"
+              >
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <Twitter size={20} />
               </a>
             </div>
           </div>
 
           {/* Services */}
           <div className="space-y-4">
-            <h4 className="text-lg font-cormorant font-semibold">Services</h4>
+            <h4 className="text-lg font-cormorant font-semibold text-white">Services</h4>
             <ul className="space-y-2 font-inter">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">Wedding Photography</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">Engagement Sessions</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">Portrait Photography</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">Event Photography</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">Wedding Films</a></li>
+              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Wedding Photography</a></li>
+              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Engagement Sessions</a></li>
+              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Portrait Photography</a></li>
+              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Event Photography</a></li>
+              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Wedding Films</a></li>
             </ul>
           </div>
 
@@ -53,26 +59,19 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-cormorant font-semibold">Get in Touch</h4>
-            <div className="space-y-3 font-inter">
-              <div className="flex items-center space-x-3 text-gray-300">
+            <h4 className="text-lg font-cormorant font-semibold">Contact</h4>
+            <ul className="space-y-2 font-inter">
+              <li className="flex items-center space-x-2">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail size={16} />
-                <span>hello@magmodephoto.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
+                <a href="tel:+919846842162" className="text-gray-300 hover:text-white transition-colors duration-300">
+                  +91 9846842162
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span>New York, NY</span>
-              </div>
-            </div>
-            <div className="pt-4">
-              <h5 className="font-semibold mb-2">Business Hours</h5>
-              <p className="text-gray-300 text-sm">Mon - Fri: 9AM - 6PM</p>
-              <p className="text-gray-300 text-sm">Weekends: By Appointment</p>
-            </div>
+                <span className="text-gray-300">Kerala, India</span>
+              </li>
+            </ul>
           </div>
         </div>
 

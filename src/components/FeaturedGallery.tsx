@@ -1,39 +1,39 @@
-
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { image11, image12, image16, image17, image18, image19 } from '../assets/imageImports';
 
 const FeaturedGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: image11,
       title: "Romantic Ceremony",
       category: "Wedding"
     },
     {
-      src: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: image12,
       title: "Golden Hour Magic",
       category: "Portrait"
     },
     {
-      src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: image16,
       title: "Intimate Moments",
       category: "Engagement"
     },
     {
-      src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: image17,
       title: "Joyful Celebration",
       category: "Reception"
     },
     {
-      src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: image18,
       title: "Tender Exchange",
       category: "Ceremony"
     },
     {
-      src: "https://images.unsplash.com/photo-1594736797933-d0ddba27b5b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Natural Beauty",
+      src: image19,
+      title: "Traditional Beauty",
       category: "Portrait"
     }
   ];

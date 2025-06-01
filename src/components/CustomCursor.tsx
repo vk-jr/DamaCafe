@@ -1,14 +1,27 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [onDarkBg, setOnDarkBg] = useState(false);
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+
+      // Check the background color under the cursor
+      const element = document.elementFromPoint(e.clientX, e.clientY);
+      if (element) {
+        const backgroundColor = window.getComputedStyle(element).backgroundColor;
+        const bgColor = backgroundColor.match(/\d+/g);
+        if (bgColor) {
+          // Check if background is dark
+          const [r, g, b] = bgColor.map(Number);
+          const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+          setOnDarkBg(brightness < 128);
+        }
+      }
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -33,36 +46,24 @@ const CustomCursor = () => {
     <>
       {/* Main cursor */}
       <motion.div
-        className="fixed pointer-events-none z-[9999] w-6 h-6 border-2 border-black rounded-full"
+        className="fixed pointer-events-none z-[9999] w-6 h-6 border-2 rounded-full hidden md:block"
         animate={{
           x: mousePosition.x - 12,
           y: mousePosition.y - 12,
-          scale: isHovering ? 2 : 1,
+          scale: isHovering ? 1.5 : 1,
+          borderColor: onDarkBg ? 'white' : 'black',
         }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
-        }}
-        style={{
-          backgroundColor: isHovering ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
-          boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
-        }}
+        transition={{ type: "spring", stiffness: 500, damping: 28 }}
       />
-      {/* Cursor trail */}
+      {/* Dot cursor */}
       <motion.div
-        className="fixed pointer-events-none z-[9998] w-2 h-2 bg-black rounded-full opacity-80"
+        className="fixed pointer-events-none z-[9999] w-1 h-1 rounded-full hidden md:block"
         animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
+          x: mousePosition.x - 2,
+          y: mousePosition.y - 2,
+          backgroundColor: onDarkBg ? 'white' : 'black',
         }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 15,
-          mass: 0.1,
-        }}
+        transition={{ type: "spring", stiffness: 500, damping: 28 }}
       />
     </>
   );

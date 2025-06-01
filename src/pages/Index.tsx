@@ -1,9 +1,10 @@
-
 import Layout from '@/components/Layout';
 import WeddingHero from '@/components/WeddingHero';
 import FeaturedGallery from '@/components/FeaturedGallery';
 import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { image1 } from '../assets/imageImports';
 
 const Index = () => {
   return (
@@ -42,9 +43,11 @@ const Index = () => {
                   <p className="text-gray-600 font-inter">Client Rating</p>
                 </div>
               </div>
-              <button className="px-8 py-3 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 font-inter font-medium">
-                Learn Our Story
-              </button>
+              <Link to="/about">
+                <button className="px-8 py-3 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 font-inter font-medium">
+                  Learn Our Story
+                </button>
+              </Link>
             </motion.div>
             
             <motion.div
@@ -53,9 +56,9 @@ const Index = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="relative"
-            >
+            >              
               <img
-                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={image1}
                 alt="Wedding Photography"
                 className="w-full rounded-lg shadow-2xl"
               />

@@ -1,23 +1,55 @@
-
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { image23, image24, image25, urumi1 } from '@/assets/imageImports';
+import { useState, useRef, useEffect } from 'react';
 
 const Films = () => {
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // Ensure video plays on component mount
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
+  const toggleSound = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   const videos = [
     {
       title: "Sarah & Michael - Napa Valley",
-      thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      thumbnail: image23,
       duration: "3:45"
     },
     {
       title: "Emma & James - Garden Wedding",
-      thumbnail: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      thumbnail: image24,
       duration: "4:12"
     },
     {
       title: "Lisa & David - Beach Ceremony",
-      thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      thumbnail: image25,
       duration: "5:30"
     },
   ];
@@ -28,16 +60,47 @@ const Films = () => {
         {/* Hero Section - Full screen from top with Background Video */}
         <section className="relative h-screen overflow-hidden">
           {/* Background Video */}
-          <div className="absolute inset-0 w-full h-full">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-              title="Background Video"
-              className="w-full h-full object-cover"
-              style={{ transform: 'scale(1.2)' }}
-              allow="autoplay; encrypted-media"
-              frameBorder="0"
-            />
-            <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 w-full h-full bg-black">
+            <div className="relative w-full h-full">
+              <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                onClick={togglePlayPause}
+                className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover scale-[1.4] cursor-pointer"
+                style={{ 
+                  minWidth: '120%',
+                  minHeight: '120%',
+                }}
+              >
+                <source src={urumi1} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-black/50" />
+              
+              {/* Play/Pause Button Overlay */}
+              <div 
+                onClick={togglePlayPause}
+                className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer group"
+              >
+                <div className="bg-black/20 rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {isPlaying ? (
+                    <Pause className="w-8 h-8 text-white" />
+                  ) : (
+                    <Play className="w-8 h-8 text-white" />
+                  )}
+                </div>
+              </div>
+              
+              {/* Sound Control Button */}
+              <button
+                onClick={toggleSound}
+                className="absolute bottom-8 right-8 z-20 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+              >
+                {isMuted ? <VolumeX className="w-6 h-6 text-white" /> : <Volume2 className="w-6 h-6 text-white" />}
+              </button>
+            </div>
           </div>
 
           {/* Hero Content */}

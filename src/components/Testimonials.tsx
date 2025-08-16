@@ -5,23 +5,23 @@ import { image20, image21, image22 } from '../assets/imageImports';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah & Michael",
-      wedding: "Destination Wedding",
-      content: "Working with Vishnu M C Photography was the best decision we made for our wedding. They captured every special moment beautifully.",
+      name: "Priya Thomas",
+      wedding: "Regular Customer",
+      content: "The momos at DaMa Cafe are absolutely incredible! The perfect blend of Dad's care and Ma's love in every bite. Their bubble tea is a must-try too!",
       rating: 5,
       image: image20
     },
     {
-      name: "Emma & James",
-      wedding: "Garden Wedding",
-      content: "The attention to detail and creativity in every shot is amazing. Our photos are everything we dreamed of and more.",
+      name: "Arun Kumar",
+      wedding: "Food Blogger",
+      content: "A cozy retreat in the heart of Thiruvananthapuram. Their waffles are crispy perfection, and the hot chocolate varieties are divine. A true family-run gem!",
       rating: 5,
       image: image21
     },
     {
-      name: "Rachel & David",
-      wedding: "Beach Wedding",
-      content: "The photos capture not just the moments, but the emotions and atmosphere of our special day. Absolutely stunning work!",
+      name: "Maya Menon",
+      wedding: "Birthday Celebration",
+      content: "Celebrated my birthday here and it was magical! The attention to detail in both food and service is outstanding. Their innovative menu keeps me coming back for more.",
       rating: 5,
       image: image22
     }
@@ -38,10 +38,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-cormorant font-light mb-6">
-            Love Stories
+            Customer Stories
           </h2>
           <p className="text-lg text-gray-600 font-inter max-w-2xl mx-auto">
-            What our couples say about their experience with us
+            What our customers say about their experience with us
           </p>
         </motion.div>
 

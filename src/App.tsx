@@ -8,7 +8,7 @@ import CustomCursor from "./components/CustomCursor";
 import LoadingScreen from "./components/LoadingScreen";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Moments from "./pages/Moments";
+import Menu from "./pages/Menu";
 import Films from "./pages/Films";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -45,7 +45,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/moments" element={<Moments />} />
+                <Route path="/menu" element={<Menu />} />
                 <Route path="/films" element={<Films />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />

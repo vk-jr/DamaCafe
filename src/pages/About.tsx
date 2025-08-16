@@ -33,10 +33,10 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg text-white/95 font-inter max-w-2xl mx-auto"
               >
-                Founded in 2014, Vishnu M C Photography was born from a simple
-                belief: that every love story deserves to be told with artistry,
-                authenticity, and heart. What started as a passion project has
-                grown into a legacy of capturing life's most precious moments.
+                DaMa Cafe was born from the beautiful blend of Dad's banking expertise
+                and Ma's culinary passion. What started as a dream to share their
+                warmth and creativity with the community has grown into
+                Thiruvananthapuram's coziest culinary destination.
               </motion.p>
             </div>
           </div>
@@ -53,40 +53,40 @@ const About = () => {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-5xl font-cormorant font-light mb-8">
-                Passion Meets Purpose
+                Where Comfort Meets Flavor
               </h2>
               <p className="text-lg text-gray-600 font-inter leading-relaxed mb-12">
-                Founded in 2014, Vishnu M C Photography was born from a simple
-                belief: that every love story deserves to be told with artistry,
-                authenticity, and heart. What started as a passion project has
-                grown into a legacy of capturing life's most precious moments.
+                Located in the heart of Thiruvananthapuram at Devi Tower, DaMa Cafe brings together
+                the warmth of home-cooked meals with innovative culinary creations. From our
+                signature momos to crispy waffles and refreshing bubble teas, every item on our
+                menu is crafted with love and served with care.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                 <div className="text-center">
                   <h3 className="text-2xl font-cormorant font-semibold mb-4">
-                    Authentic Storytelling
+                    Quality & Innovation
                   </h3>
                   <p className="text-gray-600 font-inter">
-                    We believe in capturing real emotions and genuine moments that
-                    reflect who you truly are.
+                    We take pride in our secret recipes and continuous experimentation
+                    to bring you unique and delightful flavors.
                   </p>
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl font-cormorant font-semibold mb-4">
-                    Timeless Artistry
+                    Family Values
                   </h3>
                   <p className="text-gray-600 font-inter">
-                    Our approach combines classic techniques with modern vision to
-                    create images that stand the test of time.
+                    Every dish is crafted with the same care and love that you'd
+                    find in a family kitchen, making you feel right at home.
                   </p>
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl font-cormorant font-semibold mb-4">
-                    Personal Connection
+                    Customer Experience
                   </h3>
                   <p className="text-gray-600 font-inter">
-                    We take time to understand your story, ensuring every image
-                    reflects your unique love and personality.
+                    We create a warm, welcoming atmosphere where every customer
+                    is treated like family and every visit feels special.
                   </p>
                 </div>
               </div>

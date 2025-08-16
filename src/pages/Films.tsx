@@ -1,7 +1,11 @@
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
-import { image23, image24, image25, urumi1 } from '@/assets/imageImports';
+import { 
+  image1, image2, image3, image4, image5, image6, image7, image8, 
+  image9, image10, image11, image12, image13, image14, image15,
+  image16, image17, image18, image19, urumi1 
+} from '@/assets/imageImports';
 import { useState, useRef, useEffect } from 'react';
 
 const Films = () => {
@@ -38,19 +42,19 @@ const Films = () => {
 
   const videos = [
     {
-      title: "Sarah & Michael - Napa Valley",
-      thumbnail: image23,
+      title: "Signature DaMa Momos",
+      thumbnail: image7, // Image of momos
+      duration: "2:15"
+    },
+    {
+      title: "Behind Our Bubble Tea Magic",
+      thumbnail: image13, // Modern drink setup
       duration: "3:45"
     },
     {
-      title: "Emma & James - Garden Wedding",
-      thumbnail: image24,
-      duration: "4:12"
-    },
-    {
-      title: "Lisa & David - Beach Ceremony",
-      thumbnail: image25,
-      duration: "5:30"
+      title: "Perfect Crispy Waffles",
+      thumbnail: image15, // Food preparation
+      duration: "4:20"
     },
   ];
 
@@ -112,7 +116,7 @@ const Films = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-6xl font-cormorant font-light mb-6 text-white"
               >
-                Wedding Films
+                Behind The Flavors
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -120,7 +124,7 @@ const Films = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg text-white/90 font-inter mb-12 max-w-2xl mx-auto"
               >
-                Cinematic storytelling that brings your love story to life through motion and emotion
+                Step into our kitchen and discover the magic behind our signature dishes
               </motion.p>
             </div>
           </div>
@@ -155,6 +159,69 @@ const Films = () => {
                     </div>
                   </div>
                   <h3 className="text-xl font-cormorant font-medium mb-2">{video.title}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Photo Gallery */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-6xl font-cormorant font-light mb-6">
+                Our Special Moments
+              </h2>
+              <p className="text-lg text-gray-600 font-inter max-w-2xl mx-auto">
+                Glimpses of our delicious creations and happy customers
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { img: image1, title: "Classic Momo Platter" },
+                { img: image2, title: "Special Bubble Tea" },
+                { img: image3, title: "Crispy Waffle Delight" },
+                { img: image4, title: "Chef's Special Momo" },
+                { img: image5, title: "Weekend Special" },
+                { img: image6, title: "Customer Favorites" },
+                { img: image8, title: "Dessert Special" },
+                { img: image9, title: "Tea Time Treats" },
+                { img: image10, title: "Family Platter" },
+                { img: image11, title: "Sweet Indulgence" },
+                { img: image12, title: "Café Ambience" },
+                { img: image14, title: "Happy Hours" },
+                { img: image16, title: "Signature Dish" },
+                { img: image17, title: "Festival Special" },
+                { img: image18, title: "Weekend Brunch" },
+                { img: image19, title: "Customer Celebrations" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer relative overflow-hidden"
+                >
+                  <div className="aspect-square overflow-hidden rounded-lg">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <p className="text-white text-center font-inter px-4">
+                        {item.title}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

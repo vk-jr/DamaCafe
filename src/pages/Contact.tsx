@@ -23,7 +23,7 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg text-gray-600 font-inter mb-12 max-w-2xl mx-auto"
             >
-              Ready to tell your story? We'd love to hear about your special day and discuss how we can capture your unique love story.
+              Get in touch with us for orders, feedback, or any questions you might have about our delicious offerings.
             </motion.p>
           </div>
         </section>
@@ -41,11 +41,14 @@ const Contact = () => {
               >
                 <Mail className="w-8 h-8 text-gray-800 mb-4" />
                 <h3 className="text-xl font-cormorant mb-2">Email Us</h3>
-                <p className="text-gray-600 font-inter text-center">
-                  <a href="mailto:hello@vishnumcphotography.com" className="hover:text-gray-800 transition-colors">
-                    hello@vishnumcphotography.com
+                <div className="text-gray-600 font-inter text-center flex flex-col gap-2">
+                  <a href="mailto:contact@damacafe.in" className="hover:text-gray-800 transition-colors">
+                    contact@damacafe.in
                   </a>
-                </p>
+                  <a href="mailto:damacafeindia@gmail.com" className="hover:text-gray-800 transition-colors">
+                    damacafeindia@gmail.com
+                  </a>
+                </div>
               </motion.div>
 
               {/* Phone */}
@@ -74,6 +77,9 @@ const Contact = () => {
                 <MapPin className="w-8 h-8 text-gray-800 mb-4" />
                 <h3 className="text-xl font-cormorant mb-2">Visit Us</h3>
                 <p className="text-gray-600 font-inter text-center">
+                  Devi Tower, Basement Floor,<br />
+                  Kaimanam Junction Signal,<br />
+                  Kaimanam, Thiruvananthapuram – 695040,<br />
                   Kerala, India
                 </p>
               </motion.div>

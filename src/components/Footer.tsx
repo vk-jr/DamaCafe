@@ -10,8 +10,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-5xl font-cormorant font-bold">DAMA CAFE</h3>
             <p className="text-gray-200 font-inter leading-relaxed">
-              Capturing life's most precious moments with artistry and passion. 
-              Creating timeless memories that last forever.
+              Savor the flavor of dad's care and ma's love. A cozy café serving delicious
+              momos, waffles, and more with warmth and passion.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -23,7 +23,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://facebook.com/vishnumcphotography" 
+                href="https://www.facebook.com/615574311393945/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-200 hover:text-white transition-colors duration-300"
@@ -35,13 +35,13 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h4 className="text-lg font-cormorant font-semibold text-white">Services</h4>
+            <h4 className="text-lg font-cormorant font-semibold text-white">Our Specialties</h4>
             <ul className="space-y-2 font-inter">
-              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Wedding Photography</a></li>
-              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Engagement Sessions</a></li>
-              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Portrait Photography</a></li>
-              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Event Photography</a></li>
-              <li><a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">Wedding Films</a></li>
+              <li><Link to="/menu" className="text-gray-200 hover:text-white transition-colors duration-300">Signature Momos</Link></li>
+              <li><Link to="/menu" className="text-gray-200 hover:text-white transition-colors duration-300">Gourmet Waffles</Link></li>
+              <li><Link to="/menu" className="text-gray-200 hover:text-white transition-colors duration-300">Bubble Tea</Link></li>
+              <li><Link to="/menu" className="text-gray-200 hover:text-white transition-colors duration-300">Hot Chocolate</Link></li>
+              <li><Link to="/menu" className="text-gray-200 hover:text-white transition-colors duration-300">Special Beverages</Link></li>
             </ul>
           </div>
 
@@ -69,7 +69,16 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span className="text-gray-300">Kerala, India</span>
+                <span className="text-gray-300">
+                  Devi Tower, Basement Floor, Kaimanam Junction Signal,
+                  Kaimanam, Thiruvananthapuram
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Mail size={16} />
+                <a href="mailto:contact@damacafe.in" className="text-gray-300 hover:text-white transition-colors duration-300">
+                  contact@damacafe.in
+                </a>
               </li>
             </ul>
           </div>
@@ -77,7 +86,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 font-inter">
-            © 2024 Magmode Photography. All rights reserved. | 
+            © {new Date().getFullYear()} DaMa Cafe. All rights reserved. | 
             <a href="#" className="hover:text-white transition-colors duration-300 ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-white transition-colors duration-300 ml-1">Terms of Service</a>
           </p>

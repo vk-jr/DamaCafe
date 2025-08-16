@@ -11,7 +11,7 @@ const WeddingHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const titles = useMemo(
-    () => ["SWEET", "ELEGANT", "AUTHENTIC", "ROMANTIC", "TASTEFULL"],
+    () => ["COZY", "SWEET", "TASTY", "EASY", "FAV"],
     []
   );  
   const heroImages = [
@@ -59,7 +59,7 @@ const WeddingHero = () => {
           >
             <img
               src={image}
-              alt="Wedding Photography"
+              alt="DaMa Cafe Ambience"
               className="w-full h-full object-cover object-center scale-110"
             />
             <div className="absolute inset-0 bg-black/50" />  {/* Increased overlay opacity for better contrast */}
@@ -104,7 +104,7 @@ const WeddingHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >              <Button variant="secondary" size="sm" className="gap-4 mb-12 bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
-                Trivandrum's Best Cafe ✨
+                Thiruvananthapuram's Coziest Cafe ✨
               </Button>
             </motion.div>
 
@@ -113,10 +113,10 @@ const WeddingHero = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 1 }}
-              className="text-4xl md:text-7xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-8"
+              className="text-4xl md:text-6xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-8"
             >
-              <span className="block mb-4">YOUR</span>
-              <div className="relative h-20 md:h-24 lg:h-28 flex w-full justify-center overflow-hidden text-center">
+              <span className="block mb-2">YOUR</span>
+              <div className="relative h-40 md:h-20 lg:h-50 flex w-full justify-center overflow-hidden text-center">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
@@ -141,10 +141,9 @@ const WeddingHero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="text-lg md:text-xl leading-relaxed max-w-2xl mb-16 font-inter font-light opacity-90"
+              className="text-lg md:text-2xl leading-relaxed max-w-2xl mb-16 font-inter font-light opacity-90"
             >
-              Where love stories become timeless art. 
-              Every glance, every touch, every smile—captured with passion and preserved forever.
+              Savor the flavor of dad’s care and ma’s love
             </motion.p>
 
             {/* CTA Buttons */}

@@ -104,7 +104,7 @@ const WeddingHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >              <Button variant="secondary" size="sm" className="gap-4 mb-8 bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
-                Award-Winning Photography ✨
+                Trivandrum's Best Cafe ✨
               </Button>
             </motion.div>
 
@@ -115,7 +115,7 @@ const WeddingHero = () => {
               transition={{ delay: 0.7, duration: 1 }}
               className="text-4xl md:text-7xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-6"
             >
-              <span className="block mb-4">CAPTURING</span>
+              <span className="block mb-4">...    DAMA    ...</span>
               <div className="relative h-20 md:h-24 lg:h-28 flex w-full justify-center overflow-hidden text-center">
                 {titles.map((title, index) => (
                   <motion.span
@@ -133,7 +133,7 @@ const WeddingHero = () => {
                   </motion.span>
                 ))}
               </div>
-              <span className="block mt-4">MOMENTS</span>
+              <span className="block mt-4">...    CAFE    ...</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -160,7 +160,7 @@ const WeddingHero = () => {
                   className="bg-white text-black hover:bg-black hover:text-white border-2 border-white group px-6 py-3 h-auto"
                   onClick={() => navigate('/contact')}
                 >
-                  Book Your Session
+                  Order Now
                   <MoveRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>

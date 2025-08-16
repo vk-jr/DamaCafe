@@ -24,8 +24,8 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Moments', path: '/moments' },
-    { name: 'Films', path: '/films' },
+    { name: 'Specials', path: '/moments' },
+    { name: 'Videos', path: '/films' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -44,10 +44,10 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-cormorant font-bold">
-            <span className={`font-cormorant text-xl font-light tracking-widest ${
+            <span className={`font-cormorant text-3xl font-light tracking-widest ${
               shouldShowWhiteBg ? 'text-black' : 'text-white'
             }`}>
-              VISHNU M C PHOTOGRAPHY
+              DAMA CAFE
             </span>
           </Link>
 

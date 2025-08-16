@@ -32,7 +32,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-cormorant mb-8"
         >
-          Vishnu M C Photography
+          DAMA CAFE
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0 }}

@@ -11,7 +11,7 @@ const WeddingHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const titles = useMemo(
-    () => ["TIMELESS", "ELEGANT", "AUTHENTIC", "ROMANTIC", "ETERNAL"],
+    () => ["SWEET", "ELEGANT", "AUTHENTIC", "ROMANTIC", "TASTEFULL"],
     []
   );  
   const heroImages = [
@@ -115,7 +115,7 @@ const WeddingHero = () => {
               transition={{ delay: 0.7, duration: 1 }}
               className="text-4xl md:text-7xl lg:text-8xl max-w-4xl font-cormorant font-light tracking-wide mb-6"
             >
-              <span className="block mb-4">...    DAMA    ...</span>
+              <span className="block mb-4">YOUR</span>
               <div className="relative h-20 md:h-24 lg:h-28 flex w-full justify-center overflow-hidden text-center">
                 {titles.map((title, index) => (
                   <motion.span
@@ -133,7 +133,7 @@ const WeddingHero = () => {
                   </motion.span>
                 ))}
               </div>
-              <span className="block mt-4">...    CAFE    ...</span>
+              <span className="block mt-4">ESCAPE</span>
             </motion.h1>
 
             {/* Subtitle */}

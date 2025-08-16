@@ -8,14 +8,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-cormorant font-bold">VISHNU M C PHOTOGRAPHY</h3>
+            <h3 className="text-5xl font-cormorant font-bold">DAMA CAFE</h3>
             <p className="text-gray-200 font-inter leading-relaxed">
               Capturing life's most precious moments with artistry and passion. 
               Creating timeless memories that last forever.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/vishnu_m.c/?utm_source=ig_web_button_share_sheet" 
+                href="https://www.instagram.com/damacafe.in/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-200 hover:text-white transition-colors duration-300"
